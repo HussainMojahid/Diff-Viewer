@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDiffViewer, { DiffMethod } from "react-diff-viewer";
-const oldJSON = require("./../Data/opt1.json");
-const newJSON = require("./../Data/output.json");
+const oldJSON = require("./../Data/new.json");
+const newJSON = require("./../Data/old.json");
 
 export default function DiffChecker() {
   const newStyles = {
