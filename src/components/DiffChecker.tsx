@@ -3,7 +3,7 @@ import ReactDiffViewer, { DiffMethod } from "react-diff-viewer";
 const oldJSON = require("./../Data/new.json");
 const newJSON = require("./../Data/old.json");
 
-export default function DiffChecker() {
+export default function DiffChecker(responseData: any) {
   const newStyles = {
     variables: {
       light: {
@@ -12,10 +12,13 @@ export default function DiffChecker() {
       }
     }
   };
+
+  console.log("11111: ", responseData);
   return (
     <div className="App">
       <ReactDiffViewer
-        oldValue={JSON.stringify(oldJSON, undefined, 4)}
+        // oldValue={JSON.stringify(oldJSON, undefined, 4)}
+        oldValue={JSON.stringify(responseData, undefined, 4)}
         newValue={JSON.stringify(newJSON, undefined, 4)}
         splitView={true}
         compareMethod={DiffMethod.WORDS_WITH_SPACE}
