@@ -1,11 +1,14 @@
 import axios from 'axios';
+import { log } from 'console';
 
 
 export const fetchXml = async () => {
     try {
-      const apiUrl = 'https://jsonplaceholder.typicode.com/todos'; // Replace with your API endpoint
+      const apiUrl = 'https://localhost:8080/xmlconvertor/getFileChunck?PayerFileName=opt2.xml&chunk=0'; // Replace with your API endpoint
       const response = await axios.get(apiUrl);
-      return response;
+      // console.log(response.data);
+      
+      return response.data;
     } catch (error) {
       console.error('Error fetching data:', error);
     }
